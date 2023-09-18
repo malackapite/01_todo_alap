@@ -11,7 +11,13 @@ export class Megjelenitsor{
         this.$keszElem=this.$sorElem.children(".check")
         
         this.$keszElem.on("click",()=>{
-            this.$sorElem.css("background-color","green", "important")
+            this.$sorElem.children("td").css("background-color","green", "important")
+        })
+        this.$sorElem.children(".cancel").on("click",()=>{
+            this.$sorElem.children("td").css("background-color","white", "important")
+        })
+        this.$sorElem.children(".delete").on("click",()=>{
+            this.$sorElem.children("td").css("display","none", "important")
         })
     }
 
@@ -22,7 +28,7 @@ export class Megjelenitsor{
                 tmp += `<td>${this.$elem[kulcs]}</td>`             
             }
         }
-        tmp+=`<td class="check">✔💨</td><td class="delete">🗑💨</td>`
+        tmp+=`<td class="check">✔💨</td><td class="cancel">❌💨</td><td class="delete">🗑💨</td>`
         tmp+="</tr>"
         this.$szuloElem.append(tmp)
     }
