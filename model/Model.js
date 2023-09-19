@@ -21,6 +21,10 @@ class Model{
     megse(nth){
         TODOLIST2[nth].kesz=false
     }
+
+    adatok(adatok){
+        TODOLIST2.push(adatok)
+    }
 }
 
 export default Model
